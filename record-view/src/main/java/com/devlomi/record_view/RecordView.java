@@ -145,8 +145,8 @@ public class RecordView extends RelativeLayout {
     }
 
 
-    private boolean isLessThanOneSecond(long time) {
-        return time <= 1000;
+    private boolean isLessThanThreeSecond(long time) {
+        return time <= 3000;
     }
 
 
@@ -224,7 +224,7 @@ public class RecordView extends RelativeLayout {
             if (slideToCancelLayout.getX() != 0 && slideToCancelLayout.getX() <= counterTime.getRight() + cancelBounds) {
 
                 //if the time was less than one second then do not start basket animation
-                if (isLessThanOneSecond(time)) {
+                if (isLessThanThreeSecond(time)) {
                     hideViews(true);
                     animationHelper.clearAlphaAnimation(false);
 
@@ -282,7 +282,7 @@ public class RecordView extends RelativeLayout {
 
         elapsedTime = System.currentTimeMillis() - startTime;
 
-        if (!isLessThanSecondAllowed && isLessThanOneSecond(elapsedTime) && !isSwiped) {
+        if (!isLessThanSecondAllowed && isLessThanThreeSecond(elapsedTime) && !isSwiped) {
             if (recordListener != null)
                 recordListener.onLessThanSecond();
 
