@@ -110,7 +110,7 @@ recordView.setOnRecordListener(new OnRecordListener() {
 
             @Override
             public void onLessThanSecond() {
-              //When the record time is less than One Second
+              //When the record time is less than Three Seconds
                 Log.d("RecordView", "onLessThanSecond");
             }
         });
